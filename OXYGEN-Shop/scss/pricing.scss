@@ -1,0 +1,133 @@
+@import url(/style.scss);
+// Variables
+$font-raleway: 'Raleway';
+$font-open-sans: 'Open Sans';
+
+// Shared List Styles
+.pricing-list,
+.pricing-list-professional {
+    list-style: none;
+    padding-top: 1em;
+    padding-bottom: 2.5em;
+}
+
+.pricing-list-items {
+    padding-top: 0.9em;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 0.2em;
+    text-align: left;
+    font-family: $font-open-sans;
+    line-height: 1.7em;
+}
+
+// Styles
+.pricing-header {
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    font-family: $font-raleway;
+}
+
+.pricing-container {
+    border-radius: 18px;
+    position: relative;
+    font-family: $font-raleway;
+
+    &-basic,
+    &-professional,
+    &-premium {
+        border: 1px solid transparent;
+        margin: 2.5em;
+
+        &:hover {
+            border-color: #ddd; // Color del borde al pasar el ratón
+        }
+
+        &-display {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        &-price {
+            font-size: 46px;
+            font-weight: 300;
+            font-family: $font-open-sans;
+        }
+
+        &-professional {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            font-family: $font-raleway;
+        }
+    }
+
+    &-basic {
+        border: 1px solid rgb(251, 59, 100);
+
+        &-price {
+            color: rgb(251, 59, 100);
+        }
+    }
+
+    &-professional {
+        border: 1px solid rgb(7, 172, 230);
+
+        &-price {
+            color: rgb(7, 172, 230);
+            padding-bottom: 0.15em;
+        }
+
+        &:hover {
+            background-color: rgb(7, 172, 230);
+        }
+    }
+
+    &-premium {
+        border: 1px solid rgb(85, 223, 180);
+
+        &-price {
+            color: rgb(85, 223, 180);
+        }
+
+        &-professional {
+            padding-top: 1em;
+        }
+    }
+}
+
+// Shared Button Styles
+.pricing-button {
+    border-radius: 23px;
+    text-align: center;
+    color: white;
+    font-family: $font-open-sans;
+    font-weight: 700;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: none;
+    position: absolute;
+    top: 92%;
+}
+
+// Styles for each button variant
+.pricing-basic-button {
+    background: rgb(235, 71, 110);
+    left: 25%;
+}
+
+.pricing-professional-button {
+    background: rgb(7, 172, 230);
+    left: 30%;
+}
+
+.pricing-premium-button {
+    background: rgb(85, 223, 180);
+    left: 25%;
+}
