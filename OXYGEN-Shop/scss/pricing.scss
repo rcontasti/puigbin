@@ -1,133 +1,145 @@
 @import url(/style.scss);
-// Variables
-$font-raleway: 'Raleway';
-$font-open-sans: 'Open Sans';
 
-// Shared List Styles
-.pricing-list,
-.pricing-list-professional {
-    list-style: none;
-    padding-top: 1em;
-    padding-bottom: 2.5em;
-}
+.pricing {
+	&__header {
+		font-size: 36px;
+		font-weight: 400;
+		text-align: center;
+		padding-top: 1.5em;
+		padding-bottom: 0.5em;
+		font-family: 'Raleway';
+	}
 
-.pricing-list-items {
-    padding-top: 0.9em;
-    font-size: 14px;
-    font-weight: 400;
-    padding-bottom: 0.2em;
-    text-align: left;
-    font-family: $font-open-sans;
-    line-height: 1.7em;
-}
+	&__container {
 
-// Styles
-.pricing-header {
-    font-size: 36px;
-    font-weight: 400;
-    text-align: center;
-    padding-top: 1.5em;
-    padding-bottom: 0.5em;
-    font-family: $font-raleway;
-}
+		&-basic,
+		&-professional,
+		&-premium {
+			border-radius: 18px;
+			position: relative;
+			font-family: 'Raleway';
+			transition: transform 0.3s, box-shadow 0.3s;
 
-.pricing-container {
-    border-radius: 18px;
-    position: relative;
-    font-family: $font-raleway;
+			&-display {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			&
 
-    &-basic,
-    &-professional,
-    &-premium {
-        border: 1px solid transparent;
-        margin: 2.5em;
+			&-price {
+				font-size: 46px;
+				font-weight: 300;
+				font-family: 'Open Sans';
+			}
+		}
+		&-basic:hover,
+		&-professional:hover,
+		&-premium:hover {
+			transform: scale(1.1);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+		}
+		&-basic {
+			border: 1px solid rgb(251, 59, 100);
+			margin: 2.5em;
 
-        &:hover {
-            border-color: #ddd; // Color del borde al pasar el ratón
-        }
+			&-price {
+				color: rgb(251, 59, 100);
+			}
+		}
 
-        &-display {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+		&-professional {
+			border: 1px solid rgb(7, 172, 230);
+			margin: 2.5em;
 
-        &-price {
-            font-size: 46px;
-            font-weight: 300;
-            font-family: $font-open-sans;
-        }
+			&-professional {
+				font-size: 20px;
+				font-weight: 700;
+				text-align: center;
+			}
 
-        &-professional {
-            font-size: 20px;
-            font-weight: 700;
-            text-align: center;
-            font-family: $font-raleway;
-        }
-    }
+			&-price {
+				text-align: center;
+				color: rgb(7, 172, 230);
+				padding-bottom: 0.15em;
+			}
+		}
 
-    &-basic {
-        border: 1px solid rgb(251, 59, 100);
+		&-premium {
+			border: 1px solid rgb(85, 223, 180);
+			border-radius: 18px;
+			margin: 2.5em;
 
-        &-price {
-            color: rgb(251, 59, 100);
-        }
-    }
+			&-price {
+				text-align: center;
+				color: rgb(85, 223, 180);
+			}
 
-    &-professional {
-        border: 1px solid rgb(7, 172, 230);
+			&-professional {
+				font-size: 20px;
+				font-weight: 700;
+				text-align: center;
+				padding-top: 1em;
+			}
+		}
+	}
 
-        &-price {
-            color: rgb(7, 172, 230);
-            padding-bottom: 0.15em;
-        }
+	&__list,
+	&__list-professional {
+		list-style: none;
+		padding-top: 1em;
+		padding-bottom: 2.5em;
+	}
 
-        &:hover {
-            background-color: rgb(7, 172, 230);
-        }
-    }
+	&__list-items,
+	&__list-professional {
+		padding-top: 0.9em;
+		font-size: 14px;
+		font-weight: 400;
+		padding-bottom: 0.2em;
+		text-align: left;
+		font-family: 'Open Sans';
+		line-height: 1.7em;
+	}
 
-    &-premium {
-        border: 1px solid rgb(85, 223, 180);
+	&__limited-offer {
+		font-size: 12px;
+		font-weight: 700;
+		text-align: center;
+		color: rgb(19, 37, 59);
+		font-family: 'Raleway';
+	}
 
-        &-price {
-            color: rgb(85, 223, 180);
-        }
+	&__basic-button,
+	&__professional-button,
+	&__premium-button {
+		border-radius: 23px;
+		text-align: center;
+		background: transparent;
+		color: white;
+		font-family: 'Open Sans';
+		font-weight: 700;
+		padding-left: 4em;
+		padding-right: 4em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		border: none;
+		position: absolute;
+		top: 92%;
+	}
 
-        &-professional {
-            padding-top: 1em;
-        }
-    }
-}
+	&__basic-button {
+		background: rgb(235, 71, 110);
+		left: 25%;
+	}
 
-// Shared Button Styles
-.pricing-button {
-    border-radius: 23px;
-    text-align: center;
-    color: white;
-    font-family: $font-open-sans;
-    font-weight: 700;
-    padding-left: 4em;
-    padding-right: 4em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border: none;
-    position: absolute;
-    top: 92%;
-}
+	&__professional-button {
+		background: rgb(7, 172, 230);
+		left: 25%;
+	}
 
-// Styles for each button variant
-.pricing-basic-button {
-    background: rgb(235, 71, 110);
-    left: 25%;
-}
-
-.pricing-professional-button {
-    background: rgb(7, 172, 230);
-    left: 30%;
-}
-
-.pricing-premium-button {
-    background: rgb(85, 223, 180);
-    left: 25%;
+	&__premium-button {
+		background: rgb(85, 223, 180);
+		left: 25%;
+	}
 }

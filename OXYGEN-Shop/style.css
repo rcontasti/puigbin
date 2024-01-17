@@ -123,6 +123,9 @@ body {
 .card__img {
   text-align: center;
 }
+.card__img-brand {
+  text-align: center;
+}
 .card__img__computer {
   width: 11em;
   height: 6em;
@@ -242,29 +245,32 @@ body {
   border-radius: 18px;
   position: relative;
   font-family: "Raleway";
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .pricing__container-basic-display, .pricing__container-professional-display, .pricing__container-premium-display {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.pricing__container-basic-price, .pricing__container-professional-price, .pricing__container-premium-price {
+.pricing__container-basic .pricing__container-basic-price, .pricing__container-basic .pricing__container-professional-price, .pricing__container-basic .pricing__container-premium-price, .pricing__container-professional .pricing__container-basic-price, .pricing__container-professional .pricing__container-professional-price, .pricing__container-professional .pricing__container-premium-price, .pricing__container-premium .pricing__container-basic-price, .pricing__container-premium .pricing__container-professional-price, .pricing__container-premium .pricing__container-premium-price {
   font-size: 46px;
   font-weight: 300;
   font-family: "Open Sans";
 }
+.pricing__container-basic:hover, .pricing__container-professional:hover, .pricing__container-premium:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 .pricing__container-basic {
   border: 1px solid rgb(251, 59, 100);
-  margin-bottom: 3em;
-  margin-left: 2.5em;
-  margin-right: 2.5em;
+  margin: 2.5em;
 }
 .pricing__container-basic-price {
   color: rgb(251, 59, 100);
 }
 .pricing__container-professional {
   border: 1px solid rgb(7, 172, 230);
-  margin: 1.5em;
+  margin: 2.5em;
 }
 .pricing__container-professional-professional {
   font-size: 20px;
@@ -333,7 +339,7 @@ body {
 }
 .pricing__professional-button {
   background: rgb(7, 172, 230);
-  left: 30%;
+  left: 25%;
 }
 .pricing__premium-button {
   background: rgb(85, 223, 180);
@@ -348,7 +354,6 @@ body {
   font-family: "Raleway";
   margin-top: 2em;
 }
-
 .questions__leave {
   font-size: 16px;
   font-weight: 400;
@@ -357,8 +362,7 @@ body {
   padding-bottom: 2em;
   font-family: "Open Sans";
 }
-
-.question__email {
+.questions__email {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
@@ -367,41 +371,18 @@ body {
   padding-bottom: 1em;
   font-family: "Open Sans";
 }
-
 .questions__email-img {
   display: flex;
   padding-left: 1.75em;
 }
-
-.question__form-text {
-  padding-left: 2.3em;
-  color: rgb(8, 166, 228);
-  font-size: 11px;
-  font-weight: 600;
-  text-align: left;
-  letter-spacing: 3.2799999714px;
-  font-family: "Open Sans";
-}
-
-.question__form-input {
-  width: 85%;
-  margin-right: 1em;
-  margin-left: 2em;
-  border: none;
-  border-bottom: 1px solid #95989a;
-  line-height: 40px;
-  margin-bottom: 2em;
-}
-
-.question__form-checkbox {
+.questions__form__checkbox {
   width: 24px;
   height: 24px;
   margin-right: 5px;
   vertical-align: top;
   margin-left: 2em;
 }
-
-.question__form-checkbox-text {
+.questions__form__checkbox-text {
   display: inline-block;
   width: 75%;
   font-family: "Open Sans";
@@ -411,8 +392,42 @@ body {
   line-height: 1rem;
   color: #707070;
 }
-
-.question__button {
+.questions__form-text {
+  padding-left: 2.3em;
+  color: rgb(8, 166, 228);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 3.2799999714px;
+  font-family: "Open Sans";
+}
+.questions__form-input {
+  width: 85%;
+  margin-right: 1em;
+  margin-left: 2em;
+  border: none;
+  border-bottom: 1px solid #95989a;
+  line-height: 40px;
+  margin-bottom: 2em;
+}
+.questions__form-checkbox {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  vertical-align: top;
+  margin-left: 2em;
+}
+.questions__form-checkbox-text {
+  display: inline-block;
+  width: 75%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #707070;
+}
+.questions__button {
   padding-left: 7.5em;
   padding-right: 7.5em;
   padding-top: 1.5em;
@@ -422,7 +437,7 @@ body {
   color: white;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
   position: relative;
-  left: 8em;
+  left: 7em;
   top: 3em;
   font-family: "Open Sans";
   font-weight: 700;
@@ -436,7 +451,6 @@ body {
   background: rgb(247, 247, 247);
   box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
 }
-
 .footer__display {
   align-items: center;
   display: inline-block;
@@ -444,14 +458,21 @@ body {
   padding-top: 1em;
   padding-left: 1em;
 }
-
-.footer_icon {
+.footer__display-img {
+  display: inline-block;
+}
+.footer__display-img-tw {
+  margin-right: 1em;
+}
+.footer__display-img-fc {
+  margin-right: 1em;
+}
+.footer__icon {
   font-size: 26px;
   font-weight: 300;
   color: rgb(8, 166, 228);
   font-family: "Raleway";
 }
-
 .footer__rights {
   font-size: 11px;
   font-weight: 400;
@@ -459,21 +480,17 @@ body {
   font-family: "Open Sans";
 }
 
-.footer__display-img {
-  display: inline-block;
-}
-
-.footer__display-img-tw {
-  margin-right: 1em;
-}
-
-.footer__display-img-fc {
-  margin-right: 1em;
-}
-
 @media (min-width: 500px) {
   .navbar__logo {
     margin-right: 35em;
+  }
+  .popular {
+    margin-top: 8em;
+    margin-bottom: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .popular__img {
     max-width: 100%;
@@ -484,18 +501,14 @@ body {
     padding-top: 50px;
     display: none;
   }
-  .popular__img {
-    width: 100%;
-  }
-  .popular {
-    margin-top: 8em;
-    margin-bottom: 8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .popular__entries-text {
     width: 8em;
+  }
+  .card {
+    padding-left: 25em;
+    padding-right: 25em;
+    padding-top: 4em;
+    padding-bottom: 1em;
   }
   .card__article--be {
     display: flex;
@@ -535,12 +548,6 @@ body {
     width: 17em;
     margin-left: 4em;
   }
-  .card {
-    padding-left: 25em;
-    padding-right: 25em;
-    padding-top: 4em;
-    padding-bottom: 1em;
-  }
   .card__text-info {
     margin-top: 2em;
     width: 30em;
@@ -552,6 +559,32 @@ body {
     width: 8em;
     margin-bottom: 1em;
     margin-top: 0;
+  }
+  .card__img__rectangle {
+    width: 31.2em;
+    height: 18.5em;
+    border-left: 70px solid rgb(247, 247, 247);
+  }
+  .card__text-display-brand {
+    width: 42%;
+    margin-left: 1em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    margin-right: 8em;
+  }
+  .card__img__trumpet {
+    top: 5em;
+    left: 9em;
+  }
+  .card__img-brand {
+    background-color: #95989a;
+  }
+  .card__text-shop--increase {
+    padding-top: 0;
+    width: 70%;
+  }
+  .pricing__basic-button, .pricing__professional-button, .pricing__premium-button {
+    top: 95%;
   }
   .pricing-display {
     display: flex;
@@ -605,31 +638,26 @@ body {
     margin-top: 3.5em;
     width: 30em;
   }
-  .question__link {
+  .questions__link {
     margin-left: 1em;
-  }
-  .question__link {
     width: 90%;
     margin-left: 1em;
   }
-  a {
-    text-align: start;
-  }
-  .question__consent {
+  .questions__consent {
     display: flex;
   }
-  .question__checkbox {
+  .questions__checkbox {
     display: inline-block;
   }
-  .question__button {
+  .questions__button {
     left: 50%;
   }
   .questions__header {
     margin-bottom: 0.5em;
   }
   .footer__display {
-    margin-right: 70em;
-    margin-left: 5em;
+    margin-right: 75em;
+    margin-left: 10em;
   }
 }
 
